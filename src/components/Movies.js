@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import getMovies from '../movieService';
+import { getMovies } from '../movieService';
+import Movie from './Movie'
 
 
 const Movies = () => {
@@ -15,10 +16,12 @@ const Movies = () => {
         <>
         <div>
             <button type="button" onClick={handleClick}>Get Movies</button>
-            {movies?.length > 0? <p>{JSON.stringify(movies)}</p> : null} 
+            <ul>
+            {movies?.length > 0 && movies.map((movie) => <Movie key={movie._id} title={movie.title} actor={movie.actor} />)}
+            </ul> 
         </div>
         </>
     )
 };
-
+//<li key={movie._id}>{movie.title}</li>
 export default Movies;
