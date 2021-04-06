@@ -4,18 +4,20 @@ import getMovies from '../movieService'
 
 const Movies = () => {
 
-    const [data, setData] = useState([]);
+    const [movies, setMovies] = useState([]);
 
     const handleClick = async() => {
-        const allMovies = await getMovies();
-        setData(allMovies)
+        const data = await getMovies();
+        setMovies(data)
     }
     
     return (
+        <>
         <div>
             <button type="button" onClick={handleClick}>Get Movies</button>
-            {allMovies ?. length > 0 ? <p>{JSON.stringify(allMovies)}</p> : null} 
+            {movies?.length > 0 ? <p>{JSON.stringify(movies)}</p> : null} 
         </div>
+        </>
     )
 };
 
