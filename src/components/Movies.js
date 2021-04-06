@@ -15,7 +15,7 @@ const Movies = () => {
         <>
         <div>
             <button type="button" onClick={handleClick}>Get Movies</button>
-            {movies?.length > 0 ? <p>{JSON.stringify(movies)}</p> : null} 
+            {movies?.length > 0? <p>{JSON.stringify(movies)}</p> : null} 
         </div>
         </>
     )
