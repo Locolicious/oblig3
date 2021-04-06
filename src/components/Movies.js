@@ -1,21 +1,22 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
+import getMovies from '../movieService'
+
 
 const Movies = () => {
 
-    function handleChange() {
-        console.log('test')
+    const [data, setData] = useState([]);
+
+    const handleClick = async() => {
+        const allMovies = await getMovies();
+        setData(allMovies)
     }
-
-    const [state, setState] = useState(0);
-
-    //midlertidig button funskjon
     
     return (
         <div>
-            <button onClick={() => setState(state + 1)}>Click</button>
-            <p>Du har klikket {state} ganger.</p> 
+            <button type="button" onClick={handleClick}>Get Movies</button>
+            {allMovies ?. length > 0 ? <p>{JSON.stringify(allMovies)}</p> : null} 
         </div>
     )
-}
+};
 
 export default Movies;

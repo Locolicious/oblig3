@@ -10,7 +10,7 @@ const movie = {
     fields: [
       { title: "Title", name: "title", type: "string", },
       { title: "Actor", name: "actor", type: "reference",
-        to: [{name: 'actor', type: "string"}]
+        to: [{type: "actor"}]
       }
     ]
 
