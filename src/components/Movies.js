@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import getMovies from '../movieService'
+import getMovies from '../movieService';
 
 
 const Movies = () => {
